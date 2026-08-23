@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
-function Loader({loading}) {
-    const [percentage, setPercentage] = useState(0);
+function Loader({ loading }) {
+  const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,18 +13,18 @@ function Loader({loading}) {
           return 100;
         }
       });
-    }, 30);
+    }, 18);
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     if (!loading) {
-      gsap.to('.loader', {
-        duration: 1,
+      gsap.to(".loader", {
+        duration: 0.5,
         opacity: 1,
         y: -50,
-        ease: 'power4.out',
+        ease: "power4.out",
         onComplete: () => setPercentage(100),
       });
     }
@@ -32,9 +32,11 @@ function Loader({loading}) {
 
   return (
     <div className="loader h-screen w-full fixed grid place-content-center bg-darkgray z-[9999]">
-      <div className='text-4xl uppercase font-bold text-white'>{percentage}%</div>
+      <div className="text-4xl uppercase font-bold text-white">
+        {percentage}%
+      </div>
     </div>
-  )
+  );
 }
 
-export default Loader
+export default Loader;

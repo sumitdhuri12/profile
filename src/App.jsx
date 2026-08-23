@@ -17,7 +17,7 @@ export default function App() {
     // Simulate loading time for content
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Adjust this time to simulate content loading
+    }, 2300); // Adjust this time to simulate content loading
 
     return () => clearTimeout(timer);
   }, []);
@@ -28,7 +28,7 @@ export default function App() {
       <div>
         <Cursor hovering={hovering} />
         <Navbar />
-        <BackToTop setHovering={setHovering}/>
+        <BackToTop setHovering={setHovering} />
         <Hero
           id="home"
           title="Home"
@@ -37,7 +37,7 @@ export default function App() {
         />
         <Projects id="projects" title="Projects" setHovering={setHovering} />
         <Skills id="skills" title="Skills" />
-        <Contact id="contact" title="Contact" setHovering={setHovering}/>
+        <Contact id="contact" title="Contact" setHovering={setHovering} />
       </div>
     </>
   );
